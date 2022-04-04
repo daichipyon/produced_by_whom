@@ -2,7 +2,7 @@ const axiosBase = require('axios');
 const axios = axiosBase.create({
     baseURL: 'https://api.genius.com',
     headers: {
-        'Authorization': 'Bearer' + ' ' + 'QvdyHM01Cn_jyqyODArCyMpK2Op3p57H0XkVrZ4mCr24b_xDM2bMZl9GZ8XUWdpm',
+        'Authorization': 'Bearer' + ' ' + process.env.VUE_APP_API_KEY,
         'Access-Control-Allow-Origin': '*'
     },
     responseType: 'json'
