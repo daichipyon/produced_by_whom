@@ -1,6 +1,6 @@
 <template>
 <div class="header">
-    Produced by Whom
+    Who produce song for rapper?
 </div>
 </template>
 
@@ -16,5 +16,6 @@ export default {
   font-size: 2em;
   text-align: center;
   padding: 10px 0px;
+  font-weight: bold;
 }
 </style>

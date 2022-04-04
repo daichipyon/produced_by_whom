@@ -35,18 +35,7 @@
         <div v-else>
             <RapperStatus :state="state"/>
             <TopThreeProducers :song_state="song_state"/>
-            <div class="container">
-            <h1 class="songs">Songs</h1>
-            <table>
-                <tbody>
-                    <tr v-for="song in song_state.orderd_songs" :key="song.id">
-                        <td>{{song.title}}</td>
-                        <td>{{song.release_date}}</td>
-                        <td v-if="song.producer_artists.length > 0">{{song.producer_artists[0].name}}</td>
-                    </tr>
-                </tbody>
-            </table>
-            </div>
+            <OtherProducers :song_state='song_state'/>
     </div>
 
 </template>
@@ -57,12 +46,14 @@ import {getArtistIdByArtistname,getSongsByArtistIdWithSongInfo, getArtistinfoByA
 import HeaderComponent from './HeaderComponent.vue'
 import RapperStatus from './RapperStatus.vue'
 import TopThreeProducers from './TopThreeProducers.vue'
+import OtherProducers from './OtherProducers.vue'
 
 export default ({
   components: {
     HeaderComponent,
     RapperStatus,
-    TopThreeProducers
+    TopThreeProducers,
+    OtherProducers
   },
     setup() {
         const state = reactive({
@@ -85,6 +76,9 @@ export default ({
                 return orederd_producers}),
             top_three_producers :computed(()=>{
                 return song_state.producers.slice(0,3)
+            }),
+            other_producers:computed(()=>{
+                return song_state.producers.slice(4)
             })
             })
 
@@ -117,7 +111,6 @@ export default ({
             // Add Songs
             ret_vals.forEach(primary_songs => primary_songs.forEach(song=> song_state.raw_songs.push(song)))
 
-            console.log(song_state.producers.slice().sort(function (a, b) {return b[1].songs.length - a[1].songs.length}))
         }
 
         function groupBy(list, keyGetter) {

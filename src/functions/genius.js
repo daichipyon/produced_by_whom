@@ -27,7 +27,7 @@ export async function getArtistinfoByArtistID(artistID) {
                 id: artist_info.id,
                 name: artist_info.name,
                 genius_url: artist_info.url,
-                img_url: artist_info.header_image_url
+                img_url: artist_info.image_url
             }
         })
     } catch (error) {

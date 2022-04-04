@@ -29,6 +29,8 @@ export default {
 .rapper-status__image{
     width:300px;
     margin-left:1em;
+    border-radius: 100%;
+    box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);
 }
 .rapper-status__text{
     width:600px;
