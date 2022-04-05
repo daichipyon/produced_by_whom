@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/api"
-  to = "https://api.mysearch.com"
+  to = "api.genius.com"
   status = 200
   force = true
   [redirects.headers]
