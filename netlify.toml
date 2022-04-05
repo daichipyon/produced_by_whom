@@ -1,1 +1,4 @@
-/api/* http://api.genius.com/:splat
+[[redirects]]
+  from = "/api/*"
+  to = "https://api.genius.com"
+  status = 200
