@@ -17,6 +17,10 @@ export default {
   text-align: center;
   padding: 10px 0px;
   font-weight: bold;
-  width:900px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  min-width: 900px;
+  font-family: Programme, Arial, sans-serif;
 }
 </style>
