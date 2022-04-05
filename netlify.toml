@@ -1,6 +1,6 @@
 [[redirects]]
-  from = "/api"
-  to = "api.genius.com"
+  from = "/api*"
+  to = "api.genius.com/:splat"
   status = 200
   force = true
   [redirects.headers]
