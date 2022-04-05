@@ -4,7 +4,7 @@
             <div class="name-form">
             <form @submit.prevent="fetch_rapper_id()">
                 <div class="field">
-                    <div class="name-form__label">アーティスト名をいれてね</div>
+                    <div class="name-form__label">調べたいラッパーの名前をいれてね</div>
                     <input
                         type="text"
                         placeholder=""
