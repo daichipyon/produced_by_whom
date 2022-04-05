@@ -6,5 +6,5 @@
   [redirects.headers]
   #API_SIGNATURE_TOKEN is set from netlfiy console Site settigns -> Build & deploy -> Enviroment
   #and token is written like [Bearer xxxxxxxxxxxxxxxxxxxxxxxxxxxx ]
-    Authorization= "API_SIGNATURE_TOKEN",
+    Authorization= "API_SIGNATURE_TOKEN"
     Access-Control-Allow-Origin = '*'
