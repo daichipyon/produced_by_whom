@@ -16,20 +16,6 @@
                     </button>
                 </div>
             </form>
-            <form @submit.prevent="fetch_rapper()">
-                <div class="field">
-                    <div class="name-form__label">GeniusのアーティストIDをいれてね</div>
-                    <input
-                        type="text"
-                        placeholder=""
-                        v-model='state.rapper_id'
-                        required
-                    />
-                    <button type="submit" class="name-form__button">
-                        Go (^^)/
-                    </button>
-                </div>
-            </form>
             </div>
         </div>
         <div v-else>
