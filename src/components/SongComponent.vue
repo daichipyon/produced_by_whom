@@ -41,7 +41,10 @@ export default {
 }
 
 .songscontainer__image{
-    height: 70px;
+  object-fit: cover;
+  height: 70px;
+  width: 70px;
+
 }
 .songscontainer__faet{
     font-size: 12px;

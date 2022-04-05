@@ -42,7 +42,9 @@ export default {
 
 .producercontainer__image{
     align-self: center;
+    object-fit: cover;
     border-radius: 100%;
+    height: 200px;
     width:200px;
     margin-bottom: 1em;
     box-shadow: 0px 0px 9px 0px rgba(0,0,0,0.1);

@@ -2,8 +2,7 @@
 <div class="rapper-status">
     <img class="rapper-status__image" :src='state.img_url'>
     <div class= "rapper-status__text">
-        <p class="rapper-status__name"><a :src="state.genius_url">{{state.name}}</a></p>
-        <p class="rapper-status__sns">Instagram</p>
+        <a :href="state.genius_url"><p class="rapper-status__name">{{state.name}}</p></a>
     </div>
 </div>
 </template>

@@ -2,5 +2,8 @@ body {
     background: #F7F7F7;
     margin:0em;
     font-family: sans-serif;
-
   }
+a:link,a:visited{
+  color: black;
+  text-decoration: underline;
+}

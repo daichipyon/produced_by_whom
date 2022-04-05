@@ -52,8 +52,10 @@ export default {
 }
 
 .table-data__image{
-    max-height: 100px;
-    margin: 10px;
+  object-fit: cover;
+  height: 100px;
+  width: 100px;
+  margin: 10px;
 }
 .table-data__songwrapper{
     display: grid;

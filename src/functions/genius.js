@@ -1,6 +1,6 @@
 const axiosBase = require('axios');
 const axios = axiosBase.create({
-    baseURL: '/api',
+    baseURL: process.env.VUE_APP_USE_LOCAL_SERVER ? process.env.VUE_APP_API_PATH : '/api',
     headers: {
         'Authorization': 'Bearer' + ' ' + process.env.VUE_APP_API_KEY,
         'Access-Control-Allow-Origin': '*'
