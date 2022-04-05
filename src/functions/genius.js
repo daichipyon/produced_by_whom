@@ -1,6 +1,6 @@
 const axiosBase = require('axios');
 const axios = axiosBase.create({
-    baseURL: 'https://api.genius.com',
+    baseURL: '/api',
     headers: {
         'Authorization': 'Bearer' + ' ' + process.env.VUE_APP_API_KEY,
         'Access-Control-Allow-Origin': '*'

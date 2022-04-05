@@ -1,0 +1,19 @@
+[[redirects]]
+  from = "/api/*"
+  to = "https://api.genius.com/"
+  status = 200
+  force = true
+  conditions = {Role = ["admin", "cms"]}
+  [redirects.headers]
+    X-From = "Netlify"
+    X-Api-Key = "some-api-key-string"
+    
+[[redirects]]
+  from = "/api"
+  to = "https://api.mysearch.com"
+  status = 200
+  force = true
+  [redirects.headers]
+  #API_SIGNATURE_TOKEN is set from netlfiy console Site settigns -> Build & deploy -> Enviroment
+    'Authorization': 'Bearer' + ' ' + API_SIGNATURE_TOKEN,
+    'Access-Control-Allow-Origin': '*'
