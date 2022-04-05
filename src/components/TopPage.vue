@@ -30,13 +30,20 @@
                     </button>
                 </div>
             </form>
-        </div>
+            </div>
         </div>
         <div v-else>
             <RapperStatus :state="state"/>
-            <TopThreeProducers :song_state="song_state"/>
-            <OtherProducers :song_state='song_state'/>
-    </div>
+            <div v-if="loading">
+                <LoadingComponent />
+            </div>
+            <div v-else>
+                <h1>Top 3 Producers</h1>
+                <TopThreeProducers :song_state="song_state"/>
+                <h1>Other Producers</h1>
+                <OtherProducers :song_state='song_state'/>
+            </div>
+        </div>
 
 </template>
 <script>
@@ -47,13 +54,15 @@ import HeaderComponent from './HeaderComponent.vue'
 import RapperStatus from './RapperStatus.vue'
 import TopThreeProducers from './TopThreeProducers.vue'
 import OtherProducers from './OtherProducers.vue'
+import LoadingComponent from './LoadingComponent.vue'
 
 export default ({
   components: {
     HeaderComponent,
     RapperStatus,
     TopThreeProducers,
-    OtherProducers
+    OtherProducers,
+    LoadingComponent
   },
     setup() {
         const state = reactive({
@@ -84,6 +93,7 @@ export default ({
 
         const isexist = ref(false)
         const input_artist_name = ref('')
+        const loading = ref(true)
 
 
         const fetch_rapper_id = async() => {
@@ -110,6 +120,7 @@ export default ({
             console.log(ret_vals)
             // Add Songs
             ret_vals.forEach(primary_songs => primary_songs.forEach(song=> song_state.raw_songs.push(song)))
+            loading.value = false;
 
         }
 
@@ -137,7 +148,7 @@ export default ({
             });
             return map;
         }
-    return {state,song_state,input_artist_name,fetch_rapper_id, fetch_rapper,isexist}
+    return {state,song_state,input_artist_name,fetch_rapper_id, fetch_rapper,isexist,loading}
     },
 })
 </script>
@@ -160,5 +171,9 @@ export default ({
     background:white;
     color: black;
     margin:0.5em 2em;
+}
+h1{
+    text-align: center;
+    font-size:2em;
 }
 </style>>
